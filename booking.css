@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111;
+  color: white;
+  line-height: 1.6;
+}
+
+
+
+
+/* Booking Form */
+.booking {
+  padding: 3rem;
+  background: #111;
+  text-align: center;
+}
+.booking form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.booking input, .booking select {
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+}
+.booking button {
+  margin-top: 1rem;
+  background: red;
+  color: white;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

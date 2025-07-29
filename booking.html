@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" src="booking.html">
+</head>
+<body>
+  <!-- Booking Form -->
+  <section id="booking" class="booking">
+    <h2>Book a Test Drive</h2>
+    <form id="bookForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="date" id="date" required>
+      <select id="carModel">
+        <option value="">Select Car</option>
+        <option value="Mustang GT">Mustang GT</option>
+        <option value="Tesla Model S">Tesla Model S</option>
+        <option value="BMW i8">BMW i8</option>
+      </select>
+      <label for="license">Upload License:</label>
+      <input type="file" id="license" accept="image/*" required>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </section>
+</body>
+</html>

@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #111;
+  color: white;
+  line-height: 1.6;
+}
+
+
+/* Car Models */
+.models {
+  padding: 3rem;
+  text-align: center;
+  background: #222;
+}
+.car-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.car-card {
+  background: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 280px;
+}
+.car-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.car-card button {
+  margin-top: 1rem;
+  background: red;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+}

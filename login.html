@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Signup</title>
+  <link rel="stylesheet" href="login.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="login.js"></script>
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="car.mp4" type="video/mp4">
+  </video>
+
+  <div class="mainlog">
+    <!-- Login Form -->
+    <div class="form-box active" id="login-form">
+      <h1>Login</h1>
+      <input type="text" placeholder="Email" class="userBtn">
+      <input type="password" placeholder="Password" class="passBtn">
+      <button id="login-submit">Login</button>
+      <button class="link-btn" id="signup-btn">Create an account</button>
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-box" id="signup-form">
+      <h1>Create Account</h1>
+      <input type="text" placeholder="First Name" id="fname">
+      <input type="text" placeholder="Last Name" id="lname">
+      <input type="text" placeholder="Email" id="newEmail">
+      <input type="password" placeholder="Password" id="newPass">
+      <input type="password" placeholder="Confirm Password" id="confirmPass">
+      <button id="signup-submit">Sign Up</button>
+      <button class="link-btn" id="login-btn">Back to Login</button>
+    </div>
+  </div>
+
+  
+</body>
+</html>
+
