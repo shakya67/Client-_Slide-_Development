@@ -1,43 +1,45 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+/* booking.css */
 
-body {
-  background: #111;
-  color: white;
-  line-height: 1.6;
+:root{
+  --accent:#0b71ff; --muted:#6b7280; --bg:#f6f8fb; --card-bg:#fff; --radius:12px; --container:1100px;
+  --focus:3px solid rgba(11,113,255,0.18);
 }
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial;margin:0;background:var(--bg);color:#111}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.site-header{background:linear-gradient(90deg,#061323,#071235);color:#fff;padding:.75rem 0;position:sticky;top:0;z-index:40}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.5rem}
+.logo{width:36px;height:36px;border-radius:6px}
 
+.detail-grid{display:grid;grid-template-columns:1fr 380px;gap:1rem;align-items:start;margin:1rem 0;}
+.carousel{position:relative;background:var(--card-bg);border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+.carousel-track{display:flex;align-items:center;justify-content:center;height:260px;background:#f3f5f8}
+.carousel-track img{max-width:100%;max-height:100%;object-fit:cover}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);border:0;background:rgba(0,0,0,0.4);color:#fff;width:40px;height:40px;border-radius:8px;cursor:pointer}
+.carousel-btn.prev{left:12px} .carousel-btn.next{right:12px}
 
+.details{background:var(--card-bg);padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.muted{color:var(--muted)}
+.specs dl{display:flex;gap:1rem;flex-wrap:wrap}
+.specs dt{font-weight:600;color:#374151;width:80px}
+.specs dd{margin:0;color:var(--muted)}
 
+.booking-panel{margin-top:1rem;background:var(--card-bg);padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.06)}
+.booking-panel h3{margin-top:0}
+.form-row{display:flex;flex-direction:column;margin-bottom:.75rem}
+.form-row label{font-weight:600}
+.form-row input,.form-row textarea{padding:.5rem;border-radius:8px;border:1px solid #e6eefc}
+.hint{font-size:.85rem;color:var(--muted);margin-top:.25rem}
+.form-actions{display:flex;gap:.5rem;align-items:center;margin-top:1rem}
+.btn{padding:.55rem .75rem;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(11,113,255,0.18)}
+.btn-outline{background:#fff;border:1px solid #e6eefc;color:var(--accent)}
+.estimate{background:#f8fbff;padding:.6rem;border-radius:8px;margin-top:.5rem;display:flex;flex-direction:column;gap:.25rem}
+#formFeedback{margin-top:1rem;color:green;font-weight:600}
 
-/* Booking Form */
-.booking {
-  padding: 3rem;
-  background: #111;
-  text-align: center;
-}
-.booking form {
-  max-width: 400px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-.booking input, .booking select {
-  margin: 0.5rem 0;
-  padding: 0.7rem;
-  border: none;
-  border-radius: 5px;
-}
-.booking button {
-  margin-top: 1rem;
-  background: red;
-  color: white;
-  padding: 0.7rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Responsive */
+@media (max-width:980px){
+  .detail-grid{grid-template-columns:1fr;gap:1rem}
+  .carousel-track{height:200px}
 }

@@ -1,29 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" src="booking.html">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dream Car Hub — Booking</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="stylesheet" href="booking.css">
+  <meta name="description" content="Dream Car Hub booking page. Accessible booking form with validation, price estimate and image carousel.">
 </head>
 <body>
-  <!-- Booking Form -->
-  <section id="booking" class="booking">
-    <h2>Book a Test Drive</h2>
-    <form id="bookForm">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="date" id="date" required>
-      <select id="carModel">
-        <option value="">Select Car</option>
-        <option value="Mustang GT">Mustang GT</option>
-        <option value="Tesla Model S">Tesla Model S</option>
-        <option value="BMW i8">BMW i8</option>
-      </select>
-      <label for="license">Upload License:</label>
-      <input type="file" id="license" accept="image/*" required>
-      <button type="submit">Confirm Booking</button>
-    </form>
-  </section>
+  
+
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <img src="images/favicon.png" alt="" aria-hidden="true" class="logo">
+        <h1>Dream Car Hub</h1>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="shop.html" class="active">Shop</a></li>
+          <li><a href="booking.html">Book</a></li>
+          <li><a href="aboutus.html" class="active">About Us</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="detail-grid" aria-labelledby="carTitle">
+      <div class="carousel" aria-roledescription="carousel" aria-label="Selected car images">
+        <button class="carousel-btn prev" aria-label="Previous image">&lt;</button>
+        <div class="carousel-track">
+          <!-- images populated by JS -->
+          <img src="images/car-placeholder.jpg" alt="Selected car image" />
+        </div>
+        <button class="carousel-btn next" aria-label="Next image">&gt;</button>
+      </div>
+
+      <div class="details">
+        <h2 id="carTitle">Selected Car</h2>
+        <p id="carDesc" class="muted">Car description.</p>
+        <p><strong>Price: </strong>$<span id="carPrice">0</span></p>
+        <div class="specs">
+          <dl>
+            <dt>Mileage</dt><dd id="specMileage">—</dd>
+            <dt>Year</dt><dd id="specYear">—</dd>
+            <dt>Fuel</dt><dd id="specFuel">—</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-panel" aria-labelledby="formHeading">
+      <h3 id="formHeading">Booking Form</h3>
+      <form id="bookingForm" novalidate>
+        <div class="form-row">
+          <label for="fullName">Full name <span aria-hidden="true">*</span></label>
+          <input id="fullName" name="fullName" type="text" required aria-required="true" autocomplete="name">
+          <div class="hint" id="nameHint">Enter your full name</div>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" required aria-required="true" autocomplete="email">
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Phone (10 digits) <span aria-hidden="true">*</span></label>
+          <input id="phone" name="phone" type="tel" pattern="\\d{10}" required aria-required="true" inputmode="tel" placeholder="07XXXXXXXX">
+        </div>
+
+        <div class="form-row">
+          <label for="date">Preferred date <span aria-hidden="true">*</span></label>
+          <input id="date" name="date" type="date" required aria-required="true" min="">
+        </div>
+
+        <div class="form-row">
+          <label for="months">Lease months</label>
+          <input id="months" name="months" type="number" min="1" max="60" value="12">
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="Any preferences, accessibility needs, or questions"></textarea>
+        </div>
+
+        <div class="estimate">
+          <p>Estimated monthly: <strong>$<span id="monthlyEstimate">0.00</span></strong></p>
+          <p>Estimated total: <strong>$<span id="totalEstimate">0.00</span></strong></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Submit Booking</button>
+          <button type="button" id="saveDraft" class="btn btn-outline">Save draft</button>
+        </div>
+
+        <div id="formFeedback" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year2"></span> Dream Car Hub</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="booking.js" defer></script>
 </body>
 </html>
